@@ -1,1 +1,2 @@
-/main.tf
+.main.tf
+.terraform/providers/registry.terraform.io/hashicorp/aws/4.34.0/darwin_arm64
