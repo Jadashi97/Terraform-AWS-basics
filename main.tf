@@ -152,7 +152,7 @@ resource "aws_instance" "web-server-instance" {
   ami               = "ami-08c40ec9ead489470"
   instance_type     = "t2.micro"
   availability_zone = "us-east-1a"
-  key_name          = "jadashi1-key"
+  key_name          = "jadashi1- key"
 
 
   network_interface {
