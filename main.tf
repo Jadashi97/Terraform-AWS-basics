@@ -58,8 +58,8 @@ resource "aws_route_table" "prod-route-table" {
   }
 
   route {
-    ipv6_cidr_block        = "::/0"
-    egress_only_gateway_id = aws_egress_only_internet_gateway.gw.id
+    ipv6_cidr_block = "::/0"
+    gateway_id      = aws_internet_gateway.gw.id
   }
 
   tags = {
@@ -89,8 +89,8 @@ resource "aws_route_table_association" "a" {
 # 6. Create Security Group to allow port 22,80,443
 
 resource "aws_security_group" "allow_web" {
-  name        = "allow_web_traffic"
-  description = "Allow Web inbound traffic"
+  name        = "Allow_Web"
+  description = "Allow WEB inbound traffic"
   vpc_id      = aws_vpc.jadashi1-vpc.id
 
   ingress {
@@ -109,8 +109,8 @@ resource "aws_security_group" "allow_web" {
   }
   ingress {
     description = "SSH"
-    from_port   = 80
-    to_port     = 80
+    from_port   = 22
+    to_port     = 22
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
